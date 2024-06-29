@@ -11,7 +11,6 @@ class KuisionerController extends BaseController
         }
 
         if ($this->request->getMethod() === 'post') {
-            // Simpan data ke sesi
             $biodata = $this->request->getPost();
             session()->set('biodata', $biodata);
             log_message('debug', 'Biodata disimpan: ' . json_encode($biodata));
@@ -55,7 +54,6 @@ class KuisionerController extends BaseController
         }
 
         if ($this->request->getMethod() === 'post') {
-            // Simpan data ke sesi
             $layanan_akademik = $this->request->getPost();
             session()->set('layanan_akademik', $layanan_akademik);
             log_message('debug', 'Layanan Akademik disimpan: ' . json_encode($layanan_akademik));
@@ -76,7 +74,6 @@ class KuisionerController extends BaseController
         }
 
         if ($this->request->getMethod() === 'post') {
-            // Simpan data ke sesi
             $layanan_kemahasiswaan = $this->request->getPost();
             session()->set('layanan_kemahasiswaan', $layanan_kemahasiswaan);
             log_message('debug', 'Layanan Kemahasiswaan disimpan: ' . json_encode($layanan_kemahasiswaan));

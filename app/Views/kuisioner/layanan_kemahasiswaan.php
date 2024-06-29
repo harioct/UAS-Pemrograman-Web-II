@@ -72,7 +72,6 @@
     </form>
 </div>
 <script>
-    // Load data from Local Storage for radio buttons
     document.addEventListener('DOMContentLoaded', function() {
         const formData = JSON.parse(localStorage.getItem('kuisionerFormRadio')) || {};
         for (const [key, value] of Object.entries(formData)) {
@@ -85,7 +84,6 @@
         }
     });
 
-    // Save data to Local Storage on form change for radio buttons
     document.getElementById('kuisionerForm').addEventListener('input', function() {
         const formData = {};
         this.querySelectorAll('input[type="radio"]').forEach(field => {
@@ -108,11 +106,9 @@
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                // Ambil data dari local storage
                 const storedData = JSON.parse(localStorage.getItem('kuisionerFormRadio')) || {};
                 console.log('Data dari local storage:', storedData);
 
-                // Ambil data dari form saat ini
                 const formData = new FormData(document.getElementById('kuisionerForm'));
                 for (const [key, value] of Object.entries(storedData)) {
                     formData.append(key, value);
@@ -120,7 +116,6 @@
 
                 console.log('Data yang akan dikirim:', Array.from(formData.entries()));
 
-                // Kirim data ke server
                 fetch('<?= base_url('kuisioner/submit') ?>', {
                     method: 'POST',
                     body: formData
@@ -141,8 +136,8 @@
                         '',
                         'success'
                     ).then(() => {
-                        localStorage.removeItem('kuisionerFormRadio'); // Hapus data dari local storage
-                        window.location.href = '<?= base_url('kuisioner/selesai') ?>'; // Redirect ke halaman selesai
+                        localStorage.removeItem('kuisionerFormRadio');
+                        window.location.href = '<?= base_url('kuisioner/selesai') ?>';
                     });
                 })
                 .catch(error => {

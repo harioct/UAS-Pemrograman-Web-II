@@ -130,7 +130,6 @@
 </div>
 
 <script>
-    // Load data from Local Storage for radio buttons
     document.addEventListener('DOMContentLoaded', function() {
         const formData = JSON.parse(localStorage.getItem('visimisiFormRadio')) || {};
         for (const [key, value] of Object.entries(formData)) {
@@ -143,7 +142,6 @@
         }
     });
 
-    // Save data to Local Storage on form change for radio buttons
     document.getElementById('visimisiForm').addEventListener('input', function() {
         const formData = {};
         this.querySelectorAll('input[type="radio"]').forEach(field => {
@@ -156,7 +154,6 @@
 </script>
 
 <script>
-    // Load data from Local Storage for checkboxes
     document.addEventListener('DOMContentLoaded', function() {
         const formData = JSON.parse(localStorage.getItem('visimisiFormCheckbox')) || {};
         for (const [key, values] of Object.entries(formData)) {
@@ -169,7 +166,6 @@
         }
     });
 
-    // Save data to Local Storage on form change for checkboxes
     document.getElementById('visimisiForm').addEventListener('input', function() {
         const formData = {};
         this.querySelectorAll('input[type="checkbox"]').forEach(field => {

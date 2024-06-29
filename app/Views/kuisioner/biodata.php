@@ -63,7 +63,6 @@
 </div>
 
 <script>
-    // Load data from Local Storage
     document.addEventListener('DOMContentLoaded', function() {
         const formData = JSON.parse(localStorage.getItem('biodataForm')) || {};
         for (const [key, value] of Object.entries(formData)) {
@@ -73,7 +72,6 @@
             }
         }
 
-        // Add asterisk to required fields
         const labels = document.querySelectorAll('label strong');
         labels.forEach(label => {
             const asterisk = document.createElement('span');
@@ -83,7 +81,6 @@
         });
     });
 
-    // Save data to Local Storage on form change
     document.getElementById('biodataForm').addEventListener('input', function() {
         const formData = {};
         new FormData(this).forEach((value, key) => formData[key] = value);
