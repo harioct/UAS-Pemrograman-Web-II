@@ -7,20 +7,20 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $table = 'users';
-    protected $allowedFields = ['name', 'email', 'password'];
-    protected $useTimeStamps = true;
+    protected $allowedFields = ['name', 'username', 'password'];
+    protected $useTimestamps = true;
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
 
     protected $validationRules = [
         'name' => 'required',
-        'email' => 'required|valid_email|is_unique[users.email]',
+        'username' => 'required|exact_length[13]|numeric|is_unique[users.username]',
         'password' => 'required|min_length[8]'
     ];
 
     protected $validationMessages = [
-        'email' => [
-            'is_unique' => 'Sorry, That email has already been taken. Please choose another.'
+        'username' => [
+            'is_unique' => 'Sorry, That username has already been taken. Please choose another.'
         ]
     ];
 
@@ -36,5 +36,4 @@ class UserModel extends Model
         $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
         return $data;
     }
-
 }

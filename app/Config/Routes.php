@@ -22,3 +22,14 @@ $routes->group('login', function ($routes) {
 $routes->group('logout', function ($routes) {
     $routes->get('/', 'LogoutController::index');
 });
+
+$routes->get('dashboard', 'Dashboard::index', ['filter' => 'auth']);
+
+$routes->group('kuisioner', ['filter' => 'auth'], function($routes) {
+    $routes->match(['GET', 'POST'], 'biodata', 'KuisionerController::biodata');
+    $routes->match(['GET', 'POST'], 'visi_misi', 'KuisionerController::visi_misi');
+    $routes->match(['GET', 'POST'], 'layanan_akademik', 'KuisionerController::layanan_akademik');
+    $routes->match(['GET', 'POST'], 'layanan_kemahasiswaan', 'KuisionerController::layanan_kemahasiswaan');
+    $routes->post('submit', 'KuisionerController::submit');
+    $routes->get('selesai', 'KuisionerController::selesai');
+});
