@@ -527,7 +527,6 @@
     </form><br>
 </div>
 <script>
-    // Load data from Local Storage for radio buttons
     document.addEventListener('DOMContentLoaded', function() {
         const formData = JSON.parse(localStorage.getItem('akademikFormRadio')) || {};
         for (const [key, value] of Object.entries(formData)) {
@@ -540,7 +539,6 @@
         }
     });
 
-    // Save data to Local Storage on form change for radio buttons
     document.getElementById('akademikForm').addEventListener('input', function() {
         const formData = {};
         this.querySelectorAll('input[type="radio"]').forEach(field => {
@@ -552,7 +550,6 @@
     });
 </script>
 <script>
-    // Load data from Local Storage for radio buttons
     document.addEventListener('DOMContentLoaded', function() {
         const formData = JSON.parse(localStorage.getItem('akademikForm2Radio')) || {};
         for (const [key, value] of Object.entries(formData)) {
@@ -565,7 +562,6 @@
         }
     });
 
-    // Save data to Local Storage on form change for radio buttons
     document.getElementById('akademikForm2').addEventListener('input', function() {
         const formData = {};
         this.querySelectorAll('input[type="radio"]').forEach(field => {
@@ -577,7 +573,6 @@
     });
 </script>
 <script>
-    // Load data from Local Storage for radio buttons
     document.addEventListener('DOMContentLoaded', function() {
         const formData = JSON.parse(localStorage.getItem('akademikForm3Radio')) || {};
         for (const [key, value] of Object.entries(formData)) {
@@ -590,7 +585,6 @@
         }
     });
 
-    // Save data to Local Storage on form change for radio buttons
     document.getElementById('akademikForm3').addEventListener('input', function() {
         const formData = {};
         this.querySelectorAll('input[type="radio"]').forEach(field => {
@@ -602,7 +596,6 @@
     });
 </script>
 <script>
-    // Load data from Local Storage for radio buttons
     document.addEventListener('DOMContentLoaded', function() {
         const formData = JSON.parse(localStorage.getItem('akademikForm4Radio')) || {};
         for (const [key, value] of Object.entries(formData)) {
@@ -615,7 +608,6 @@
         }
     });
 
-    // Save data to Local Storage on form change for radio buttons
     document.getElementById('akademikForm4').addEventListener('input', function() {
         const formData = {};
         this.querySelectorAll('input[type="radio"]').forEach(field => {
@@ -627,7 +619,6 @@
     });
 </script>
 <script>
-    // Load data from Local Storage for radio buttons
     document.addEventListener('DOMContentLoaded', function() {
         const formData = JSON.parse(localStorage.getItem('akademikForm5Radio')) || {};
         for (const [key, value] of Object.entries(formData)) {
@@ -640,7 +631,6 @@
         }
     });
 
-    // Save data to Local Storage on form change for radio buttons
     document.getElementById('akademikForm5').addEventListener('input', function() {
         const formData = {};
         this.querySelectorAll('input[type="radio"]').forEach(field => {

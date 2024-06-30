@@ -14,10 +14,7 @@
 
 <body>
 
-    <!-- Content -->
     <?= $this->renderSection('content') ?>
-
-    <!-- /.Content -->
 
     <footer class="text-center mt-5">
         <p><em><small>Form Kuisioner | Fakultas Teknik Universitas Lambung Magkurat</small></em></p>
