@@ -17,7 +17,7 @@ class RegisterController extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Register | Seri Tutorial CodeIgniter 4: Login dan Register @ qadrlabs.com'
+            'title' => 'Register | Form Kuisioner'
         ];
 
         return view('auth/register', $data);
@@ -25,7 +25,7 @@ class RegisterController extends BaseController
 
     public function store()
     {
-        $data = $this->request->getPost(['name', 'email', 'password']);
+        $data = $this->request->getPost(['name', 'username', 'password']);
 
         if (! $this->validateData($data, $this->model->validationRules)) {
             return $this->index();

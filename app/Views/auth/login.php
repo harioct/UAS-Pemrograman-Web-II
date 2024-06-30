@@ -25,8 +25,8 @@
 
                     <?= form_open('login'); ?>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" required>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" class="form-control" required pattern="\d{13}">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>

@@ -19,7 +19,7 @@ class LoginController extends BaseController
         }
 
         $data = [
-            'title' => 'Login | Seri Tutorial CodeIgniter 4: Login dan Register @ qadrlabs.com'
+            'title' => 'Login | Form Kuisioner'
         ];
 
         return view('auth/login', $data);
@@ -27,38 +27,37 @@ class LoginController extends BaseController
 
     public function login()
     {
-        $data = $this->request->getPost(['email', 'password']);
+        $data = $this->request->getPost(['username', 'password']);
 
-        if (! $this->validateData($data, [
-            'email' => 'required',
+        if (! $this->validate([
+            'username' => 'required|exact_length[13]|numeric',
             'password' => 'required'
         ])) {
-            return $this->index();
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $email = $this->request->getPost('email');
+        $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        $credentials = ['email' => $email];
+        $credentials = ['username' => $username];
 
-        $user = $this->model->where($credentials)
-            ->first();
+        $user = $this->model->where($credentials)->first();
 
         if (! $user) {
-            session()->setFlashdata('error', 'Email atau password anda salah.');
+            session()->setFlashdata('error', 'Username atau password Anda salah.');
             return redirect()->back();
         }
 
         $passwordCheck = password_verify($password, $user['password']);
 
         if (! $passwordCheck) {
-            session()->setFlashdata('error', 'Email atau password anda salah.');
+            session()->setFlashdata('error', 'Username atau password Anda salah.');
             return redirect()->back();
         }
 
         $userData = [
             'name' => $user['name'],
-            'email' => $user['email'],
+            'username' => $user['username'],
             'logged_in' => TRUE
         ];
 
@@ -68,10 +67,6 @@ class LoginController extends BaseController
 
     private function isLoggedIn(): bool
     {
-        if (session()->get('logged_in')) {
-            return true;
-        }
-
-        return false;
+        return session()->get('logged_in') === TRUE;
     }
 }
