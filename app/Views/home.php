@@ -2,13 +2,30 @@
 
 <?= $this->section('content') ?>
 
-<section class="jumbotron text-center" style="height: 500px">
-    <h1 class="mt-5">FORM KUISIONER</h1>
-    <p class="lead text-muted">
-        Fakultas Teknik Universitas Lambung Mangkurat
-    </p>
-    <a href="<?php echo base_url('login'); ?>" class="btn btn-outline-primary my-2">Login</a>
-    <a href="<?php echo base_url('register'); ?>" class="btn btn-success my-2">Register</a>
+<style>
+    .center-content {
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .btn-custom {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px auto;
+        border-width: 2px;
+    }
+</style>
+
+<section class="jumbotron text-center" style="height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #f8f9fa;">
+    <div class="center-content">
+        <h1 class="mb-4" style="font-weight: bold;">FORM KUISIONER</h1>
+        <img src="img/logoulm.png" alt="Logo" style="width: 100px; margin-bottom: 20px;display: block; margin-left: auto; margin-right: auto; width: 200px; margin-bottom: 20px; ">
+        <p class="lead text-muted mb-4">
+            Universitas Lambung Mangkurat Fakultas Teknik
+        </p>
+        <a href="<?= base_url('login'); ?>" class="btn btn-outline-dark btn-lg btn-custom">LOGIN</a>
+        <a href="<?= base_url('register'); ?>" class="btn btn-outline-dark btn-lg btn-custom">REGISTER</a>
+    </div>
 </section>
 
 <?= $this->endSection() ?>
