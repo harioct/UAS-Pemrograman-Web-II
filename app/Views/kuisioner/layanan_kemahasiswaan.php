@@ -1,11 +1,18 @@
 <?= $this->extend('layouts/main') ?>
 
 <?= $this->section('content') ?>
+<style>
+    body {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+</style>
+
 <div class="container mt-5">
     <h1 class="text-center">Kuisioner Mahasiswa</h1>
     <p class="text-center">Isi kuisioner bagi mahasiswa aktif FT ULM untuk peningkatan kualitas dan evaluasi layanan FT ULM</p>
+    <h4 class="text-center">Layanan Kemahasiswaan</h4>
     <div class="progress mb-4">
-        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Layanan Kemahasiswaan</div>
+        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
     </div><br><br>
     <form id="kuisionerForm" action="<?= base_url('kuisioner/submit') ?>" method="post">
         <div class="form-group mb-3" style="background-color: #F0EEEE;">

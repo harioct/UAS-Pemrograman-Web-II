@@ -1,19 +1,20 @@
 <?= $this->extend('layouts/main') ?>
 
 <?= $this->section('content') ?>
-
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="text-center" style="font-weight: bold;">LOGIN</h4>
+                    <img src="img/logoulm.png" alt="Logo" style="margin-bottom: 20px;display: block; margin-left: auto; margin-right: auto; width: 100px; margin-bottom: 20px; ">
+                    <h4 class="text-center" style="font-weight: bold;">Login ke Akun Anda</h4>
+                    <p>Masukkan Username dan password untuk login!</p>
                     <hr>
                     <?php if (session()->getFlashdata('success')) : ?>
                         <div class="alert alert-success">
                             <?php echo session()->getFlashdata('success'); ?>
                         </div>
-                    <?php endif; ?>
+                    <?php endif; ?> 
 
                     <?php if (session()->getFlashdata('error')) : ?>
                         <div class="alert alert-danger">
